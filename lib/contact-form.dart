@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'models/contact.dart';
+
 class ContactForm extends StatefulWidget {
-  const ContactForm({Key? key}) : super(key: key);
+  static const route = '/contact_form';
+  final int index;
+  final Contact contact;
+
+  const ContactForm({Key? key, required this.index, required this.contact})
+      : super(key: key);
 
   @override
   _ContactFormState createState() => _ContactFormState();
