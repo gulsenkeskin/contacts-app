@@ -15,6 +15,11 @@ class ContactForm extends StatefulWidget {
 }
 
 class _ContactFormState extends State<ContactForm> {
+  String imageUrl = 'https://picsum.photos/100';
+  TextEditingController _fNameController = TextEditingController();
+  TextEditingController _lNameController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container();
