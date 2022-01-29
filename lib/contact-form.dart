@@ -6,10 +6,10 @@ import 'models/contact.dart';
 
 class ContactForm extends StatefulWidget {
   static const route = '/contact_form';
-  final int index;
-  final Contact contact;
+  final int? index;
+  final Contact? contact;
 
-  const ContactForm({Key? key, required this.index, required this.contact})
+  const ContactForm({Key? key, this.index,  this.contact})
       : super(key: key);
 
   @override
@@ -43,7 +43,7 @@ class _ContactFormState extends State<ContactForm> {
         imageUrl: imageUrl);
     ContactProvider contactProvider =
         Provider.of<ContactProvider>(context, listen: false);
-    contactProvider.updateContact(widget.index, contact);
+    contactProvider.updateContact(widget.index!, contact);
     Navigator.of(context).pop();
   }
 
@@ -51,10 +51,10 @@ class _ContactFormState extends State<ContactForm> {
   void initState() {
     super.initState();
     if (widget.contact != null) {
-      _fNameController.text = widget.contact.firstName;
-      _lNameController.text = widget.contact.lastName;
-      _phoneController.text = widget.contact.phone;
-      imageUrl = widget.contact.imageUrl;
+      _fNameController.text = widget.contact!.firstName;
+      _lNameController.text = widget.contact!.lastName;
+      _phoneController.text = widget.contact!.phone;
+      imageUrl = widget.contact!.imageUrl;
     }
   }
 
