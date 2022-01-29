@@ -44,7 +44,7 @@ class _ContactsPageState extends State<ContactsPage> {
         title: Text('Contacts'),
       ),
       backgroundColor: Color(0xFFFAFAFA),
-      body: _buildListView(),
+      body: _buildListView(context),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(
@@ -58,17 +58,17 @@ class _ContactsPageState extends State<ContactsPage> {
     );
   }
 
-  Widget _buildListView() {
+  Widget _buildListView(context) {
     return Consumer<ContactProvider>(
-      builder: (__, model, _) {
+      builder: (context, snapshot, child) {
         return ListView.builder(
-          itemBuilder: (_, index) => ContactCard(
+          itemBuilder: (context, index) => ContactCard(
             index: index,
-            contact: model.contacts[index],
+            contact: snapshot.contacts[index],
             updateCallback: _updateContact,
-            deleteCallback: () => model.removeContact(index),
+            deleteCallback: () => snapshot.removeContact(index),
           ),
-          itemCount: model.contacts.length,
+          itemCount: snapshot.contacts.length,
         );
       },
     );
