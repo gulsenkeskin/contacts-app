@@ -151,9 +151,7 @@ ListView'imizi , türünün ContactProvider olduğu bir `Consumer<T>()` widget'�
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tyam7nnvh7ubx743huwq.PNG)
 
-Bu yazıda Provider ve Consumer'ın nasıl kullanılacağına ve ChangeNotifiers konularına göz attık ve provider'ı, contact uygulamamızı oluşturmak için kullandık.
 
-Kodun tamamına ulaşmak için: https://github.com/gulsenkeskin/contacts_app
 
 [reference](https://blog.devgenius.io/working-with-providers-part-1-8edb5aa0e169)
 
